@@ -3,7 +3,7 @@ package cn.uncode.schedule.test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @author juny.ye
+ * @author MoMeak
  */
 public class SimpeTestNode_1 {
 

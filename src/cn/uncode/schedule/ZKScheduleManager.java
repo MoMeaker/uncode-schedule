@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.apache.commons.lang3.StringUtils;
 import org.quartz.Scheduler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,11 +31,12 @@ import cn.uncode.schedule.zk.ScheduleDataManager4ZK;
 import cn.uncode.schedule.zk.ScheduleServer;
 import cn.uncode.schedule.zk.ScheduleTask;
 import cn.uncode.schedule.zk.ZKManager;
+import org.springframework.util.StringUtils;
 
 /**
  * 调度器核心管理
  * 
- * @author juny.ye
+ * @author MoMeak
  * 
  */
 public class ZKScheduleManager extends ThreadPoolTaskScheduler implements ApplicationContextAware {
@@ -338,7 +338,7 @@ public class ZKScheduleManager extends ThreadPoolTaskScheduler implements Applic
         ScheduledMethodRunnable scheduledMethodRunnable = (ScheduledMethodRunnable) task;
         Method targetMethod = scheduledMethodRunnable.getMethod();
         String[] beanNames = applicationcontext.getBeanNamesForType(targetMethod.getDeclaringClass());
-        if (null != beanNames && StringUtils.isNotEmpty(beanNames[0])) {
+        if (null != beanNames && !StringUtils.isEmpty(beanNames[0])) {
           String taskName = "SpringScheduler." + ScheduleUtil.getTaskNameFormBean(beanNames[0], targetMethod.getName());
           if (_taskRunCountMap.containsKey(taskName) == false) {
             _taskRunCountMap.put(taskName, 0);

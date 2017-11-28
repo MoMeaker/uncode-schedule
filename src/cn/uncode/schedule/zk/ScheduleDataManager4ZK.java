@@ -33,7 +33,7 @@ import com.google.gson.JsonSerializer;
 /**
  * 使用Zookeeper实现了IScheduleDataManager!
  * 
- * @author juny.ye
+ * @author MoMeak
  * 
  */
 public class ScheduleDataManager4ZK implements IScheduleDataManager {

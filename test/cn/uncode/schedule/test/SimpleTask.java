@@ -4,7 +4,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 /**
- * @author juny.ye
+ * @author MoMeak
  */
 @Component
 public class SimpleTask {

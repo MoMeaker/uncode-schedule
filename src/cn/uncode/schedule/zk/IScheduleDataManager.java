@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * 调度配置中心客户端接口，可以有基于数据库的实现，可以有基于ConfigServer的实现
  * 
- * @author juny.ye
+ * @author MoMeak
  * 
  */
 public interface IScheduleDataManager {

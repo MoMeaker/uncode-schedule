@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.CountDownLatch;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
@@ -19,10 +18,11 @@ import org.apache.zookeeper.data.Id;
 import org.apache.zookeeper.server.auth.DigestAuthenticationProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.StringUtils;
 
 /**
  * 
- * @author juny.ye
+ * @author MoMeak
  * 
  */
 public class ZKManager {
@@ -120,7 +120,7 @@ public class ZKManager {
 
   public boolean isAutoRegisterTask() {
     String autoRegisterTask = this.properties.getProperty(keys.autoRegisterTask.toString());
-    if (StringUtils.isNotEmpty(autoRegisterTask)) {
+    if (!StringUtils.isEmpty(autoRegisterTask)) {
       return Boolean.valueOf(autoRegisterTask);
     }
     return true;

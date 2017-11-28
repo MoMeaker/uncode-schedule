@@ -2,7 +2,7 @@ package cn.uncode.schedule.zk;
 
 /**
  * 
- * @author juny.ye
+ * @author MoMeak
  * 
  */
 public class Version {

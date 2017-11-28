@@ -10,7 +10,7 @@ import org.junit.Test;
 import cn.uncode.schedule.zk.ZKTools;
 
 /**
- * @author juny.ye
+ * @author MoMeak
  */
 public class ZookeeperTest {
   private PrintWatcher watcher = new PrintWatcher();
